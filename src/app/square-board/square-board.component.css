@@ -1,0 +1,14 @@
+.board-cell {
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    position: relative;
+}
+
+.board-cell.blocked-cell {
+    background-color: transparent;
+}
+
+.progress {
+    height: 0.5rem;
+    border-radius: 0rem;
+}

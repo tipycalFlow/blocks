@@ -1,0 +1,22 @@
+@font-face {
+    font-family: blocksFont;
+    src: url(assets/Supercell-magic-webfont.ttf);
+}
+
+body {
+    background-color: white;
+    font-family: blocksFont;
+    color: #00366f;
+}
+
+.top-menu-shadow {
+    box-shadow: 0 .35rem 0.75rem rgba(0,0,0,.15)!important;
+}
+
+.board-margin {
+    margin: 1px;
+}
+
+.pointer {
+    cursor: pointer;
+}

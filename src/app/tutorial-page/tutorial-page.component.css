@@ -1,0 +1,111 @@
+.board-cell {
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    position: relative;
+}
+
+/* HAND BOUNCE */
+.arrow {
+    text-align: center;
+    margin: 8% 0;
+    position: absolute;
+    z-index: 1;
+}
+.arrow a {
+    color: #00366f;
+}
+.white-icon {
+    color: white;
+}
+.bounce-down {
+    -moz-animation: bounce-down 2s infinite;
+    -webkit-animation: bounce-down 2s infinite;
+    animation: bounce-down 2s infinite;
+}
+
+.bounce-left {
+    -moz-animation: bounce-left 2s infinite;
+    -webkit-animation: bounce-left 2s infinite;
+    animation: bounce-left 2s infinite;
+}
+
+@keyframes bounce-down {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes bounce-left {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateX(-30px);
+    }
+    60% {
+        transform: translateX(-15px);
+    }
+}
+
+
+/* PULSE */
+
+@keyframes ripple-out {
+    100% {
+      top: -15px;
+      right: -15px;
+      bottom: -15px;
+      left: -15px;
+      opacity: 0;
+    }
+  }
+  @-webkit-keyframes ripple-out {
+    100% {
+      top: -15px;
+      right: -15px;
+      bottom: -15px;
+      left: -15px;
+      opacity: 0;
+    }
+  }
+
+  .ripple-out {
+   background: ghostwhite;
+   font-size: 22px;
+   padding: 10% 0;
+   border-radius: 5px;
+  }
+  
+  .ripple-out:before {
+    z-index: 1;
+    content: "";
+    position: absolute;
+    border: #dc3545 solid 2px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+   animation-fill-mode: forwards;
+   -webkit-animation: ripple-out 1.5s ease-in-out infinite 0.5s;
+    animation: ripple-out 1.5s ease-in-out infinite 0.5s;
+  }
+
+  .ripple-out:after {
+    z-index: 1;
+    content: "";
+    position: absolute;
+    border: #dc3545 solid 2px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+   animation-fill-mode: forwards;
+   -webkit-animation: ripple-out 1.5s ease-in-out infinite;
+    animation: ripple-out 1.5s ease-in-out infinite;
+  }

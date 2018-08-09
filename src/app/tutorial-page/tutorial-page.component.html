@@ -1,0 +1,28 @@
+<app-menu [menuConfig]="menuConfig"></app-menu>
+
+<div class="menu-container row m-5 text-center">
+  <div class="col p-0 m-0">{{'Blocks' | uppercase}}</div>
+</div>
+
+<div class="arrow bounce-down arrow-down" [style.left]="arrowDownPosition" [ngClass]="arrowDownHidden">
+  <a class="fa fa-hand-o-down fa-2x" href="#">
+    <fa name="arrow-alt-down" size="2x"></fa>
+  </a>
+</div>
+
+<div class="arrow bounce-left arrow-left" [style.left]="arrowLeftPosition" [ngClass]="arrowLeftHidden">
+  <a class="fa fa-hand-o-left fa-2x white-icon" href="#"></a>
+</div>
+
+<div class="m-3">
+  <div class="row m-0" *ngFor="let row of board; let i = index;">
+    <div class="board-cell board-margin" *ngFor="let cell of row; let j = index;" [ngClass]="[!cell.enabled ? 'blocked-cell' : 'enabled-cell', cell.isRippleEnabled ? 'ripple-out' : '']"
+      [style.width]="cellSize" [style.background]="getCellBackground(cell)" [@ownerChanged]="cell.changed" [style.height]="cellSize"
+      [@invalid]="cell.invalid" (click)="onCellClick(i, j);">
+    </div>
+  </div>
+</div>
+
+<div class="m-4 text-center">
+  <h3>{{currentStepMessage | uppercase}}</h3>
+</div>

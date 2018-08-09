@@ -1,0 +1,15 @@
+<div class="modal fade" id="app-menu-id" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content text-center border-0">
+      <div class="modal-header text-center border-0" *ngIf="(menuConfig || {}).title">
+        <span class="modal-title w-100">{{menuConfig.title | uppercase}}</span>
+      </div>
+      <div class="modal-body text-center" *ngIf="(menuConfig || {}).body">
+        <span>{{menuConfig.body | uppercase}}</span>
+      </div>
+      <div *ngFor="let menuItem of (menuConfig || {}).items" class="shadow menu-item">
+        <div class="pointer" (click)="executeMenuFunction(menuItem);">{{menuItem}}</div>
+      </div>
+    </div>
+  </div>
+</div>

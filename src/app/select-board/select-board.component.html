@@ -1,0 +1,10 @@
+<div class="row m-0 p-0" *ngFor="let board of boards" (click)="playWithBoard(board.key);">
+    <div class="w-30 m-3">
+        <div class="row m-0" *ngFor="let row of board.config; let i = index;">
+            <div class="board-cell" *ngFor="let cell of row; let j = index;" [ngClass]="[!cell.enabled ? 'blocked-cell' : 'enabled-cell', cellBorderPreference === 'th-large' ? 'board-margin' : 'm-0']"
+                [style.width]="cellSize" [style.background]="getCellBackground(cell)" [style.height]="cellSize">
+            </div>
+        </div>
+    </div>
+    <div class="w-70 m-3">{{board.name}}</div>
+</div>
